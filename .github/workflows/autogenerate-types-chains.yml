@@ -29,8 +29,8 @@ jobs:
         - name: Set Environment Variables
           run: |
             echo "CHAIN=${{ github.event.inputs.chain }}" >> $GITHUB_ENV
-            echo "RELAY_URL=wss://${{ github.event.inputs.chain }}-unrpc-lb.composable/relay" >> $GITHUB_ENV
-            echo "PARA_URL=wss://${{ github.event.inputs.chain }}-unrpc-lb.composable" >> $GITHUB_ENV
+            echo "RELAY_URL=wss://${{ github.event.inputs.chain }}-rpc-lb.composable/relay" >> $GITHUB_ENV
+            echo "PARA_URL=wss://${{ github.event.inputs.chain }}-rpc-lb.composable" >> $GITHUB_ENV
     
         - name: Generate Types
           run: |
