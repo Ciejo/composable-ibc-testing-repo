@@ -20,6 +20,11 @@ jobs:
     steps:
         - name: Checkout Repository
           uses: actions/checkout@v2
+
+        - name: Set Git Identity
+          run: |
+            git config --global user.email "${GITHUB_ACTOR_EMAIL}"
+            git config --global user.name "${GITHUB_ACTOR}"  
     
         - name: Create Branch
           run: |
