@@ -58,3 +58,7 @@ jobs:
             commit-message: "Auto-generate types for $CHAIN"
             branch: ${{ github.actor }}-branch
             base: master
+        
+        - name: Delete Branch
+          run: |
+            git push origin --delete ${{ github.actor }}-branch
