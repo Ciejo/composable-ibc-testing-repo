@@ -51,10 +51,10 @@ jobs:
             git commit -m "Auto-generate types for $CHAIN"
             git push origin ${{ github.actor }}-branch
     
-        - name: Open Pull Request
+        - name: Create pull request
           uses: peter-evans/create-pull-request@v6
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
             commit-message: "Auto-generate types for $CHAIN"
             branch: ${{ github.actor }}-branch
-            base: main
+            base: master
