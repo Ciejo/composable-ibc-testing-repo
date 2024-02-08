@@ -58,3 +58,4 @@ jobs:
             commit-message: "Auto-generate types for $CHAIN"
             branch: ${{ github.actor }}-branch
             base: master
+            title: "Auto-generate types for $CHAIN"
