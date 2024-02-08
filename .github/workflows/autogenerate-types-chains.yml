@@ -26,10 +26,10 @@ jobs:
             git config --global user.email "${GITHUB_ACTOR_EMAIL}"
             git config --global user.name "${GITHUB_ACTOR}"  
     
-        - name: Create Branch
-          run: |
-            git checkout -b ${{ github.actor }}-branch
-            git push --set-upstream origin ${{ github.actor }}-branch
+        # - name: Create Branch
+        #   run: |
+        #     git checkout -b ${{ github.actor }}-branch
+        #     git push --set-upstream origin ${{ github.actor }}-branch
     
         - name: Set Environment Variables
           run: |
@@ -45,11 +45,11 @@ jobs:
           run: |
             cargo run -p codegen --bin codegen -- --path ./utils/subxt/generated/src/$CHAIN --relay-url $RELAY_URL --para-url $PARA_URL
     
-        - name: Commit Changes
-          run: |
-            git add .
-            git commit -m "Auto-generate types for $CHAIN"
-            git push origin ${{ github.actor }}-branch
+        # - name: Commit Changes
+        #   run: |
+        #     git add .
+        #     git commit -m "Auto-generate types for $CHAIN"
+        #     git push origin ${{ github.actor }}-branch
     
         - name: Create pull request
           uses: peter-evans/create-pull-request@v6
